@@ -1,4 +1,5 @@
-FROM --platform=$TARGETOS/$TARGETARCH azul/zulu-openjdk:21-jre-headless-latest
+ARG version=21
+FROM --platform=$TARGETOS/$TARGETARCH docker.io/azul/zulu-openjdk:${version}-jre-headless-latest
 
 RUN apt-get update -y \
 	&& apt-get install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
